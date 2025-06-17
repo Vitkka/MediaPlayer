@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\UserControls\Source\img\AddMusic.png" />
+    <None Remove="View\UserControls\Source\img\BackBtn.png" />
+    <None Remove="View\UserControls\Source\img\bluetoothOff.png" />
+    <None Remove="View\UserControls\Source\img\bluetoothOn.png" />
+    <None Remove="View\UserControls\Source\img\BurgerMenu.png" />
+    <None Remove="View\UserControls\Source\img\MixIcon.png" />
+    <None Remove="View\UserControls\Source\img\NextBtn.png" />
+    <None Remove="View\UserControls\Source\img\PauseBtn.png" />
+    <None Remove="View\UserControls\Source\img\PlayBtn.png" />
+    <None Remove="View\UserControls\Source\img\RepeatIcon.png" />
+    <None Remove="View\UserControls\Source\img\RepeatOneIcon.png" />
+    <None Remove="View\UserControls\Source\img\ShareIcon.png" />
+    <None Remove="View\UserControls\Source\img\SliderIcon.png" />
+    <None Remove="View\UserControls\Source\img\SlowSpeed.png" />
+    <None Remove="View\UserControls\Source\img\TextMusic.png" />
+    <None Remove="View\UserControls\Source\img\ThreePoints.png" />
+    <None Remove="View\UserControls\Source\img\TimerPng.png" />
+    <None Remove="View\UserControls\Source\img\TurboSpeed.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\UserControls\Source\img\AddMusic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\BackBtn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\bluetoothOff.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\bluetoothOn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\BurgerMenu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\MixIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\NextBtn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+    <PackageReference Include="Uno.UI" Version="5.5.95" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\UserControls\Source\img\PauseBtn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\PlayBtn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\RepeatIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\RepeatOneIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\ShareIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\SliderIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\SlowSpeed.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\TextMusic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\ThreePoints.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\TimerPng.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\UserControls\Source\img\TurboSpeed.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

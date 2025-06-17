@@ -1,0 +1,297 @@
+﻿<UserControl x:Class="WpfApp1.View.UserControls.YandexPlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.View.UserControls"
+              xmlns:custom="clr-namespace:WpfApp1.View.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="600"
+             Background="White">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Верхнее меню-->
+            <Grid Grid.ColumnSpan="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Background="Transparent" Click="AddTrack" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/AddMusic.png" Opacity="0.5" Margin="12"/>
+                    </StackPanel>
+                </Button>
+                <Label Content="СodeNEXT" Grid.Column="3" Grid.ColumnSpan="2" Foreground="White" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button Grid.Column="6" Background="Transparent" BorderBrush="Transparent" Click="BluetoothEnable">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/bluetoothOff.png" Opacity="0.5" Margin="12" x:Name="BluetoothOff"/>
+                        <Image Source="/View/UserControls/Source/img/bluetoothOn.png" Opacity="0.5" Margin="12" x:Name="BluetoothOn" Visibility="Collapsed"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Column="7" Click="ShowList" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/BurgerMenu.png" Opacity="0.5" Margin="15"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+            
+            <!--Картинка-->
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" Grid.Row="1" Background="Gray" Margin="0,30,0,40">
+                <Image x:Name="TrackImg" Stretch="UniformToFill"/>
+            </StackPanel>
+
+            <!--Блок с наименованием трека-->
+            <Grid Grid.ColumnSpan="8" Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Artist" Text="Наименование" Grid.Column="1" Grid.ColumnSpan="4" FontSize="25" Foreground="White"/>
+                <TextBlock x:Name="Title" Text="Автор" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Foreground="Gray" FontSize="18"/>
+                <Button Grid.Column="6" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/ShareIcon.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Column="7" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/ThreePoints.png"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+            <!--MediaBar-->
+            <Grid Grid.ColumnSpan="8" Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Slider Grid.ColumnSpan="8" Margin="20,0,20,0"  x:Name="SliderTrack" ValueChanged="SliderTrack_ValueChanged"/>
+                <TextBlock Text="0:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" x:Name="StartTrack"/>
+                <TextBlock Text="0:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="8" Foreground="White" x:Name="EndTrack"/>
+            </Grid>
+            <!--Элементы управления-->
+            <Grid Grid.ColumnSpan="8" Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="45,20,10,20" Background="Transparent" BorderBrush="Transparent"> 
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/SlowSpeed.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="35, 10, 10, 10" Click="PastTrack" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/View/UserControls/Source/img/BackBtn.png"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="50, 0, 50, 0" Grid.Column="2" Grid.ColumnSpan="2" Click="Play" Background="Transparent" BorderBrush="Transparent">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/View/UserControls/Source/img/PlayBtn.png" x:Name="PlayIcon" Visibility="Visible"/>
+                            <Image Source="/View/UserControls/Source/img/PauseBtn.png" x:Name="PauseIcon" Visibility="Collapsed"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="10, 10, 35, 10" Grid.Column="4" Background="Transparent" BorderBrush="Transparent" Click="NextTrack">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/View/UserControls/Source/img/NextBtn.png"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="10, 20, 45, 20" Grid.Column="5" Background="Transparent" BorderBrush="Transparent"> 
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/TurboSpeed.png"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+            
+            <!--Нижнее меню-->
+            <Grid Grid.ColumnSpan="8" Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="30, 20, 30, 20" Click="Repeat" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/RepeatIcon.png" x:Name="RepeatOff"/>
+                        <Image Source="/View/UserControls/Source/img/RepeatOneIcon.png" x:Name="RepeatOn" Visibility="Collapsed"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="30, 20, 30, 20" Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Click="OpenEqualizer">
+                    <StackPanel Orientation="Horizontal">
+                            <Image Source="/View/UserControls/Source/img/SliderIcon.png"/>
+                        </StackPanel>
+                    </Button>
+                <Button Margin="70, 20, 70, 20" Grid.Column="2" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/TextMusic.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="30, 20, 30, 20" Grid.Column="4" Background="Transparent" BorderBrush="Transparent" Click="OpenSpeedSettings"> 
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/TimerPng.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="30, 20, 30, 20" Grid.Column="5" Background="Transparent" BorderBrush="Transparent">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/UserControls/Source/img/MixIcon.png"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+            
+            <!--Список треков-->
+            <Grid Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="11" x:Name="TrackList" Visibility="Collapsed">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView  Background="#FF1D1D1D" BorderBrush="#FF1D1D1D" Foreground="#FF3C3C3C" x:Name="ListViewTracks" SelectionChanged="PlayOnList" ItemsSource="{Binding MediaItem}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="80" Width="585" Background="DarkGray" >
+                                    <Grid.InputBindings>
+                                        <MouseBinding Gesture="LeftClick" />
+                                    </Grid.InputBindings>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image HorizontalAlignment="Left" Margin="7,7,15,7" Source="{Binding Bitmap}"/>
+                                    <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock VerticalAlignment="Center" FontSize="15" x:Name="TrackInList" Text="{Binding Title}"/>
+                                        <TextBlock Grid.Row="1" FontSize="10" x:Name="ArtistInList" Text="{Binding Author}"/>
+                                    </Grid>
+                                    <Grid Grid.Column="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </Grid>
+
+            <!--Скорость-->
+            <Grid Grid.Column="4" Grid.ColumnSpan="4" Grid.Row="9" Grid.RowSpan="2" Margin="10,50,10,0" x:Name="SpeedWindow" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="Black" Grid.ColumnSpan="4" Grid.RowSpan="2" Opacity="0.4"/>
+                <TextBlock Text="Speed" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="30"/>
+                <Slider Grid.Row="1" Grid.ColumnSpan="4" Margin="10" x:Name="SpeedSlider" ValueChanged="ChangeMediaSpeedRatio"/>
+            </Grid>
+
+            <!--Эквалайзер-->
+            <Grid Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4" x:Name="EqualizerWindow" Visibility="Collapsed" Margin="10,40,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.ColumnSpan="5" Grid.RowSpan="6" Background="black" Opacity="0.5"/>
+                <Slider Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Slider Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Slider Grid.Row="3" Grid.ColumnSpan="2"/>
+                <Slider Grid.Row="4" Grid.ColumnSpan="2"/>
+                <Slider Grid.Row="5" Grid.ColumnSpan="2"/>
+            </Grid>
+                  
+            <!--Задний фон-->
+                <Grid Grid.ColumnSpan="11" Grid.RowSpan="12" Panel.ZIndex="-1" Background="DarkGray">
+                    <Image x:Name="Background" Stretch="Fill">
+                        <Image.BitmapEffect>
+                            <BlurBitmapEffect Radius="90" />
+                        </Image.BitmapEffect>
+                    </Image>
+                <Rectangle Fill="Black" Opacity="0.6"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
